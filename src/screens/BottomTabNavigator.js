@@ -4,14 +4,14 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import SignUp from './SignUp';
 import Home from './Home';
-import Add from './Add'
-import Profile from './Profile'
-import Chat from './Chat'
-import BottomTab from './BottomTabNavigator'
+import Add from './Add';
+import Profile from './Profile';
+import Chat from './Chat';
+import BottomTab from './BottomTabNavigator';
 const Tab = createBottomTabNavigator();
 
 function MyTabBar({state, descriptors, navigation}) {
@@ -66,19 +66,18 @@ function MyTabBar({state, descriptors, navigation}) {
                 width: '100%',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: isFocused ? 0 : 5,
+                paddingTop: isFocused ? 0 : 4,
               }}>
               {isFocused && (
-                <View
-                  style={{
-                    width: '100%',
-                    height: 4,
-                    backgroundColor: '#8fd5fb',
-                    // color:  '#8fd5fb'
-                    // borderBottomRightRadius: 4,
-                    // borderBottomLeftRadius: 4,
-                  }}></View>
-              )}
+                  <View
+                    style={{
+                      width: '100%',
+                      height: 4,
+                      backgroundColor:  '#8fd5fb'
+                      // borderBottomRightRadius: 4,
+                      // borderBottomLeftRadius: 4,
+                    }}></View>
+               )}
             </View>
 
             <View
@@ -89,19 +88,39 @@ function MyTabBar({state, descriptors, navigation}) {
                 alignItems: 'center',
               }}>
               {index === 0 && (
-                <MaterialCommunityIcons name="clipboard-text" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }}  />
+                <MaterialCommunityIcons
+                  name="clipboard-text"
+                  size={25}
+                  style={{color: isFocused ? '#8fd5fb' : '#AEB3B9'}}
+                />
               )}
               {index === 1 && (
-                <Feather name="search" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }}  />
+                <Feather
+                  name="search"
+                  size={25}
+                  style={{color: isFocused ? '#8fd5fb' : '#AEB3B9'}}
+                />
               )}
               {index === 2 && (
-                <Octicons name="diff-added" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
+                <Octicons
+                  name="diff-added"
+                  size={25}
+                  style={{color: isFocused ? '#8fd5fb' : '#AEB3B9'}}
+                />
               )}
               {index === 3 && (
-                <MaterialIcons name="chat-bubble-outline" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
+                <MaterialIcons
+                  name="chat-bubble-outline"
+                  size={25}
+                  style={{color: isFocused ? '#8fd5fb' : '#AEB3B9'}}
+                />
               )}
               {index === 4 && (
-                <Feather name="user" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
+                <Feather
+                  name="user"
+                  size={25}
+                  style={{color: isFocused ? '#8fd5fb' : '#AEB3B9'}}
+                />
               )}
             </View>
           </TouchableOpacity>
@@ -116,13 +135,12 @@ function MyTabs() {
     <Tab.Navigator
       initialRouteName="Home"
       barStyle={{backgroundColor: '#191919'}}
-      tabBar={props => <MyTabBar {...props} />}>
+      tabBar={(props) => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="SignUp" component={SignUp} />
       <Tab.Screen name="Chat" component={Chat} />
       <Tab.Screen name="Profile" component={Profile} />
       <Tab.Screen name="Add" component={Add} />
-
     </Tab.Navigator>
   );
 }
