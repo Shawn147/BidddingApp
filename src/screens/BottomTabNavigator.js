@@ -6,7 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import SignUp from './SignUp';
+import Search from './Search';
 import Home from './Home';
 import Add from './Add';
 import Profile from './Profile';
@@ -137,10 +137,10 @@ function MyTabs() {
       barStyle={{backgroundColor: '#191919'}}
       tabBar={(props) => <MyTabBar {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="SignUp" component={SignUp} />
-      <Tab.Screen name="Chat" component={Chat} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Add" component={Add} />
+      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen name="Profile" component={Profile} />  
     </Tab.Navigator>
   );
 }
