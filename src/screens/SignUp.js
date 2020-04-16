@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {
 	Text,
 	View,
@@ -7,8 +7,9 @@ import {
 	TextInput,
 } from 'react-native';
 
-export default function SignUp() {
-	return (
+export default class SignUp extends Component {
+	render(){
+		return (
 		<View style={styles.container}>
 			<View style={{marginTop: 180}}>
 				<Text style={{fontWeight: 'bold', color: '#fff', fontSize: 20}}>
@@ -28,7 +29,7 @@ export default function SignUp() {
 						<Text style={{fontWeight: 'bold', color: '#057CEA'}}>FACEBOOK</Text>
 					</View>
 				</TouchableOpacity>
-				<TouchableOpacity style={{marginTop: 18}}>
+				<TouchableOpacity style={{marginTop: 18}} onPress={()=> this.props.navigation.navigate('LoginOption')} >
 					<View
 						style={{
 							flexDirection: 'row',
@@ -59,6 +60,8 @@ export default function SignUp() {
 			</View>
 		</View>
 	);
+	}
+	
 }
 
 const styles = StyleSheet.create({
