@@ -74,6 +74,7 @@ function MyTabBar({state, descriptors, navigation}) {
                     width: '100%',
                     height: 4,
                     backgroundColor: '#8fd5fb',
+                    // color:  '#8fd5fb'
                     // borderBottomRightRadius: 4,
                     // borderBottomLeftRadius: 4,
                   }}></View>
@@ -88,19 +89,19 @@ function MyTabBar({state, descriptors, navigation}) {
                 alignItems: 'center',
               }}>
               {index === 0 && (
-                <MaterialCommunityIcons name="clipboard-text" size={20} color="#AEB3B9" />
+                <MaterialCommunityIcons name="clipboard-text" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }}  />
               )}
               {index === 1 && (
-                <Feather name="search" size={20} color="#AEB3B9" />
+                <Feather name="search" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }}  />
               )}
               {index === 2 && (
-                <Octicons name="diff-added" size={20} color="#AEB3B9" />
+                <Octicons name="diff-added" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
               )}
               {index === 3 && (
-                <MaterialIcons name="chat-bubble-outline" size={20} color="#AEB3B9" />
+                <MaterialIcons name="chat-bubble-outline" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
               )}
               {index === 4 && (
-                <Feather name="users" size={20} color="#AEB3B9" />
+                <Feather name="user" size={25} style={{ color: isFocused ? '#8fd5fb' : "#AEB3B9" }} />
               )}
             </View>
           </TouchableOpacity>
